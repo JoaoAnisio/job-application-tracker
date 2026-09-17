@@ -1,26 +1,41 @@
 {
   "name": "job-application-tracker",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "contract:emit": "prisma contract emit"
   },
   "dependencies": {
+    "@prisma/adapter-neon": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "@prisma/orm-postgres": "^8.0.0-rc.11",
+    "better-auth": "^1.7.5",
+    "dotenv": "^17.4.2",
     "next": "16.3.5",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@prisma/cli-engine": "^0.3.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "prisma": "^7.10.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "@prisma/engines@7.10.0": true,
+    "esbuild@0.28.2": true,
+    "prisma@7.10.0": true,
+    "unrs-resolver@1.12.2": true
   }
 }
