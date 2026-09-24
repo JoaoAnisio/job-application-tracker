@@ -130,7 +130,7 @@ model StatusEvent{
 
 model Application {
   id        String @id @default(cuid())
-  vancancy  String
+  vacancy  String
   stage     Stage  @default(APLICADO)
   url       String?
   workMode  WorkMode?
