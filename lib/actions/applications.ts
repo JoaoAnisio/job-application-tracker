@@ -4,23 +4,13 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
-
-const STAGES = [
-  "APLICADO",
-  "TRIAGEM",
-  "TESTE_TECNICO",
-  "DINAMICA",
-  "ENTREVISTA",
-  "OFERTA",
-  "REJEITADO",
-  "DESISTIU",
-] as const;
+import { STAGES, type Stage } from "@/lib/stages";
 
 export type ActionResult<T = void> =
   | { success: true; data: T }
   | { success: false; error: string };
 
-export type Stage = (typeof STAGES)[number];
+export type { Stage };
 
 const applicationSchema = z.object({
   vacancy: z.string().min(1, "O título da vaga é obrigatório"),

@@ -1,18 +1,8 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { updateApplicationStage, type Stage } from "@/lib/actions/applications";
-
-const STAGE_LABELS: Record<Stage, string> = {
-  APLICADO: "Aplicado",
-  TRIAGEM: "Triagem",
-  TESTE_TECNICO: "Teste técnico",
-  DINAMICA: "Dinâmica",
-  ENTREVISTA: "Entrevista",
-  OFERTA: "Oferta",
-  REJEITADO: "Rejeitado",
-  DESISTIU: "Desistiu",
-};
+import { updateApplicationStage } from "@/lib/actions/applications";
+import { STAGE_LABELS, type Stage } from "@/lib/stages";
 
 export function StageSelect({
   applicationId,
