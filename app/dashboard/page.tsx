@@ -8,7 +8,7 @@ import { ApplicationList } from "@/components/application-list";
 import { getMetrics } from "@/lib/actions/metrics";
 import { MetricsCards } from "@/components/metrics-cards";
 import { StageChart } from "@/components/stage-chart";
-import { SignOutButton } from "@/components/sing-out-buttom";
+import { SignOutButton } from "@/components/sign-out-button";
 
 export default async function DashboardPage() {
   const session = await auth.api.getSession({ headers: await headers() });
