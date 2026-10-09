@@ -5,15 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma migrate deploy && next build",
     "start": "next start",
     "lint": "eslint",
-    "contract:emit": "prisma contract emit"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-neon": "^7.10.0",
     "@prisma/client": "^7.10.0",
-    "@prisma/orm-postgres": "^8.0.0-rc.11",
     "better-auth": "^1.7.5",
     "dotenv": "^17.4.2",
     "next": "16.3.5",

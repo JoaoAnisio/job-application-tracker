@@ -1,6 +1,7 @@
 import { listApplications } from "@/lib/actions/applications";
 import { StageSelect } from "./stage-select";
 import { DeleteApplicationButton } from "./delete-application-button";
+import Link from "next/link";
 
 export async function ApplicationList() {
   const applications = await listApplications();
@@ -17,13 +18,13 @@ export async function ApplicationList() {
     <ul className="divide-y rounded border">
       {applications.map((app) => (
         <li key={app.id} className="flex items-center justify-between gap-4 p-4">
-          <div className="min-w-0">
+          <Link href={`/dashboard/${app.id}`} className="min-w-0">
             <p className="truncate font-medium">{app.vacancy}</p>
             <p className="text-sm text-gray-600">{app.company.name}</p>
             <p className="text-xs text-gray-400">
               {app.appliedAt.toLocaleDateString("pt-BR")}
             </p>
-          </div>
+          </Link>
 
           <div className="flex items-center gap-2">
             <StageSelect applicationId={app.id} currentStage={app.stage} />
